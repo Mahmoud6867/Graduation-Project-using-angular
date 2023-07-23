@@ -1,0 +1,86 @@
+<div class="container-fluid">
+  <div class="row mt-3 ">
+    <h1>Dashboard</h1>
+    <div class="col-lg-3 col-sm-6 mb-3 ">
+      <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+        <div>
+          <h3>20</h3>
+          <p>Users</p>
+        </div>
+        <i class="fa-solid fa-users fs-1 text-white border rounded-circle bg-info p-3"></i>
+      </div>
+    </div>
+    <div class="col-lg-3 col-sm-6 mb-3 ">
+      <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+        <div>
+          <h3>{{usersOrdersNum }}</h3>
+          <p>Orders</p>
+        </div>
+        <i class="fa-solid fas fa-poll fs-1 text-white border rounded-circle bg-danger p-3"></i>
+      </div>
+    </div>
+    <div class="col-lg-3 col-sm-6 mb-3 ">
+      <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+        <div>
+          <h3>{{CitiesNum}}</h3>
+          <p>cities</p>
+        </div>
+        <i class="fa-solid far fa-hotel fs-1 text-white border rounded-circle bg-success p-3"></i>
+      </div>
+    </div>
+    <div class="col-lg-3 col-sm-6 mb-3">
+      <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+        <div>
+          <h3>{{adsNum}}</h3>
+          <p>Advertisements</p>
+        </div>
+        <i class="fa-solid  fas fa-ad		 fs-1 text-white border rounded-circle bg-warning p-3"></i>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4">
+      <h2> Cities</h2>
+      <table class="table table-white border table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">image</th>
+            <!-- <th scope="col">Image</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of Cities |async">
+            <td>{{data.name}}</td>
+            <td><img src={{data.img}} width="200px" alt="Order image"></td>
+          </tr>
+      </table>
+    </div>
+    <div class="col-lg-8">
+      <h2> Orders</h2>
+      <table class="table table-white border table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Price</th>
+            <th scope="col-lg-2">check-in</th>
+            <th scope="col-lg-2">check-out</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of usersOrders |async">
+            <td>{{data.name}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.price}}</td>
+            <td>{{data.checkIn}}</td>
+            <td>{{data.checkOut}}</td>
+
+            <!-- <td><img src={{data.img}} width="200px" alt="Order image"></td> -->
+          </tr>
+      </table>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,28 @@
+<div class="container-fluid" style="width: 90%;">
+  <h1 style="font-weight: bolder;color:#2596be; text-align: center;"  >All Orders</h1>
+
+  <table id="ProductsData" class="table table-success table-striped table-hover ">
+      <thead>
+          <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Price</th>
+              <th>check-in</th>
+              <th>check-out</th>
+
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of usersOrders |async">
+          <td>{{data.name}}</td>
+          <td>{{data.email}}</td>
+          <td>{{data.price}}</td>
+          <td>{{data.checkIn}}</td>
+          <td>{{data.checkOut}}</td>
+
+          <!-- <td><img src={{data.img}} width="200px" alt="Order image"></td> -->
+        </tr>
+      </tbody>
+  </table>
+</div>
+

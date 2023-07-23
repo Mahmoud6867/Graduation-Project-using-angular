@@ -1,0 +1,181 @@
+<div class="container-fluid">
+  <div class="container-fluid" style="width: 90%">
+    <h1 style="font-weight: bolder; color: #2596be; text-align: center">
+      Mange Rooms
+    </h1>
+
+    <div class="form-group row">
+      <label for="ID" class="col-sm-2 col-form-label">ID</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="ID" placeholder="ID" [(ngModel)]="room.id" readonly />
+      </div>
+    </div>
+    <br />
+    <!-- address -->
+    <div class="form-group row">
+      <label for="address" class="col-sm-2 col-form-label">Address / AR </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="address" placeholder="address" [(ngModel)]="room.address" />
+        <input type="text" class="form-control mt-2" id="addressAR" placeholder="addressAR" [(ngModel)]="room.addressAR" />
+      </div>
+    </div>
+    <br />
+    <!-- around -->
+    <div class="form-group row">
+      <label for="around" class="col-sm-2 col-form-label">Around / AR</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="around" placeholder="around" [(ngModel)]="room.around" />
+        <input type="text" class="form-control mt-2" id="aroundAR" placeholder="aroundAR" [(ngModel)]="room.aroundAR"/>
+      </div>
+    </div>
+    <br />
+    <!-- beds  -->
+    <div class="form-group row">
+      <label for="beds" class="col-sm-2 col-form-label">Beds Number</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="beds" placeholder="beds number" [(ngModel)]="room.beds" />
+      </div>
+    </div>
+    <br />
+    <!-- city  -->
+    <div class="form-group row">
+      <label for="city" class="col-sm-2 col-form-label">city / AR</label>
+      <div class="col-sm-10">
+        <select class="form-select form-control" name="rooms" id="rooms" (change)="getCity()" [(ngModel)]="room.city">
+          <!-- [(ngModel)]="room.rate" -->
+          <option *ngFor="let city of cities |async" [ngValue]="city.name">{{city.name}}</option>
+
+        </select>
+
+        <!--  <input type="text" class="form-control" id="city" placeholder="city" [(ngModel)]="room.city"/> -->
+        <input type="text" class="form-control mt-2" id="cityAR" placeholder="cityAR" [(ngModel)]="room.cityAR" />
+      </div>
+    </div>
+    <br />
+    <!-- discription -->
+    <div class="form-group row">
+      <label for="description" class="col-sm-2 col-form-label">Description /AR</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="discription" placeholder="description" [(ngModel)]="room.discription" />
+        <input type="text" class="form-control mt-2" id="discriptionAR" placeholder="descriptionAR" [(ngModel)]="room.discriptionAR" />
+      </div>
+    </div>
+    <br />
+    <!-- distance  -->
+    <div class="form-group row">
+      <label for="distance" class="col-sm-2 col-form-label">Distance</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="distance" placeholder="distance" [(ngModel)]="room.distance" />
+      </div>
+    </div>
+    <br />
+    <!-- evaluation  -->
+    <div class="form-group row">
+      <label for="evaluation" class="col-sm-2 col-form-label">Evaluation</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="evaluation" placeholder="evaluation" [(ngModel)]="room.evaluation" />
+      </div>
+    </div>
+    <br />
+    <!-- img1 /2 /3 /4 /5 -->
+    <div class="form-group row">
+      <label for="description" class="col-sm-2 col-form-label">Images URLs</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control "     id="img1" placeholder="image 1" [(ngModel)]="room.img1" />
+        <input type="text" class="form-control mt-2" id="img2" placeholder="image 2" [(ngModel)]="room.img2" />
+        <input type="text" class="form-control mt-2" id="img3" placeholder="image 3" [(ngModel)]="room.img3" />
+        <input type="text" class="form-control mt-2" id="img4" placeholder="image 4" [(ngModel)]="room.img4" />
+        <input type="text" class="form-control mt-2" id="img5" placeholder="image5 " [(ngModel)]="room.img5" />
+      </div>
+    </div>
+    <br />
+    <!-- location -->
+    <div class="form-group row">
+      <label for="location" class="col-sm-2 col-form-label">location</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="location" placeholder="location" [(ngModel)]="room.location"/>
+      </div>
+    </div>
+    <br />
+    <!-- name  -->
+    <div class="form-group row">
+      <label for="name" class="col-sm-2 col-form-label">Name /AR</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="name" placeholder="Name" [(ngModel)]="room.name"/>
+        <input type="text" class="form-control mt-2" id="nameAR" placeholder="Name AR" [(ngModel)]="room.nameAR"/>
+      </div>
+    </div>
+    <br />
+    <!-- price  -->
+    <div class="form-group row">
+      <label for="price" class="col-sm-2 col-form-label">price per night</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="price" placeholder="price per night" [(ngModel)]="room.price" />
+      </div>
+    </div>
+    <br />
+    <!-- rate  -->
+    <div class="form-group row">
+      <label for="rate" class="col-sm-2 col-form-label">Rate</label>
+      <div class="col-sm-10">
+        <select class="form-select form-control" id="rate" [(ngModel)]="room.rate">
+          <option>good</option>
+          <option>very good</option>
+          <option>excellent</option>
+        </select>
+      </div>
+    </div>
+    <br />
+    <button type="button" class="btn btn-success" (click)="saveRoom()">
+     Add Room
+    </button>
+
+
+    <hr />
+  </div>
+  <div class="container-fluid" style="width: 90%">
+    <div class=" row mb-3">
+      <label for="rooms" class="col-sm-2 col-form-label">Filter By City</label>
+      <div class="col-sm-6">
+        <select class="form-select form-control" name="rooms" id="rooms" (change)="getCity()" [(ngModel)]="filterCity">
+          <!-- [(ngModel)]="room.rate" -->
+          <option *ngFor="let city of cities |async" [ngValue]="city.name">{{city.name}}</option>
+
+        </select>
+      </div>
+    </div>
+    <div>
+    <table id="ProductsData" class="table table-success table-striped table-hover">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th>City</th>
+          <th>Delete|Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of city |async">
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.price}}</td>
+          <td>{{item.discription}}</td>
+          <td>{{item.city}}</td>
+          <td><button class="btn btn-danger" (click)="deleteRoom(item.id)" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+  <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+</svg></button>
+<button class="btn btn-success " (click)="fillFields(item.id)" >
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+  </svg></button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+  </div>
+

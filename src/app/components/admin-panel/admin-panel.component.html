@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <!-- navbar -->
+  <app-navbar></app-navbar>
+  <div class="row">
+    <!-- sidebar -->
+    <div class="col-lg-2 d-none d-md-none d-lg-block">
+      <app-sidebar class="col"></app-sidebar>
+    </div>
+    <!-- main page -->
+    <div class="col">
+      <router-outlet class="col"></router-outlet>
+    </div>
+  </div>
+</div>
